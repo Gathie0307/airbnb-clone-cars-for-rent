@@ -14,6 +14,18 @@ ActiveRecord::Schema[7.2].define(version: 2024_10_08_133544) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "bookings", force: :cascade do |t|
+    t.date "start_date"
+    t.date "end_date"
+    t.float "cost"
+    t.bigint "user_id", null: false
+    t.bigint "car_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["car_id"], name: "index_bookings_on_car_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
   create_table "cars", force: :cascade do |t|
     t.string "brand"
     t.string "model"
@@ -37,5 +49,7 @@ ActiveRecord::Schema[7.2].define(version: 2024_10_08_133544) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "bookings", "cars"
+  add_foreign_key "bookings", "users"
   add_foreign_key "cars", "users"
 end

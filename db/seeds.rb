@@ -10,23 +10,21 @@
 #
 puts "Cleaning DB..."
 
-Review.destroy_all
-Favourite.destroy_all
 Car.destroy_all
 User.destroy_all
 
 puts "Creating users..."
 
-user1 = User.create!(name: "Richard", email: "Richard@gmail.com", password: "user1")
-user2 = User.create!(name: "Jennifer", email: "Jennifer@gmail.com", password:"user2")
-user3 = User.create!(name: "Michele", email: "Michele@gmail.com", password:"user3")
-user4 = User.create!(name: "Zozimo", email: "Zozimo@gmail.com", password:"user4")
-user5 = User.create!(name: "Paul", email: "Paul@gmail.com", password:"user5")
-user6 = User.create!(name: "Michael", email: "Michael@hotmail.com", password:"user6")
-user7 = User.create!(name: "Susan", email: "Susan@hotmail.com", password:"user7")
-user8 = User.create!(name: "Robert", email: "Robert@hotmail.com", password:"user8")
-user9 = User.create!(name: "Charles", email: "Charles@hotmail.com", password:"user9")
-user10 = User.create!(name: "Maria", email: "Maria@hotmail.com", password:"user10")
+user1 = User.create!(name: "Richard", email: "Richard@gmail.com", password: "123456")
+user2 = User.create!(name: "Jennifer", email: "Jennifer@gmail.com", password:"123456")
+user3 = User.create!(name: "Michele", email: "Michele@gmail.com", password:"123456")
+user4 = User.create!(name: "Zozimo", email: "Zozimo@gmail.com", password:"123456")
+user5 = User.create!(name: "Paul", email: "Paul@gmail.com", password:"123456")
+user6 = User.create!(name: "Michael", email: "Michael@hotmail.com", password:"123456")
+user7 = User.create!(name: "Susan", email: "Susan@hotmail.com", password:"123456")
+user8 = User.create!(name: "Robert", email: "Robert@hotmail.com", password:"123456")
+user9 = User.create!(name: "Charles", email: "Charles@hotmail.com", password:"123456")
+user10 = User.create!(name: "Maria", email: "Maria@hotmail.com", password:"123456")
 
 Car.create!(brand: "Ford", model: "Fiesta", year: 2020, fuel: "petrol", user_id: user1.id)
 Car.create!(brand: "Ford", model: "Explorer", year: 2019, fuel: "petrol", user_id: user2.id)

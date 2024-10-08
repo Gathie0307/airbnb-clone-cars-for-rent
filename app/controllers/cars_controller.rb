@@ -30,6 +30,8 @@ class CarsController < ApplicationController
     redirect_to car_path(@car)
   end
 
+  private
+
   def car_params
     params.require(:car).permit(:brand, :model, :year)
   end

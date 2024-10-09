@@ -14,7 +14,7 @@ class CarsController < ApplicationController
   def create
     @car = Car.new(car_params)
     if @car.save
-      redirect_to car_path(@car)
+      redirect_to car_path(@car), notice: 'Car was successfully created.'
     else
       render :new, status: :unprocessable_entity
     end
@@ -30,7 +30,8 @@ class CarsController < ApplicationController
     redirect_to car_path(@car)
   end
 
-  private
+
+private
 
   def car_params
     params.require(:car).permit(:brand, :model, :year)

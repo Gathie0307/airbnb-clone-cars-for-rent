@@ -13,5 +13,9 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
-  resources :cars, except: %i[destroy]
+  resources :cars, except: %i[destroy] do
+    resources :bookings, only: %i[create]
+  end
+  resources :bookings, only: %i[destroy]
+  get "/profile", to: "users#profile"
 end

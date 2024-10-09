@@ -1,0 +1,9 @@
+<h1> Add new cars </h1>
+
+<%= simple_form_for(@car) do |f|%>
+<%= f.input :brand %>
+<%= f.input :model %>
+<%= f.input :year %>
+<%= f.submit "add new car" %>
+<% end %>
+<%= link_to "go back", cars_path(@car)%>

@@ -1,0 +1,13 @@
+<h1>Hello <%=current_user.name %></h1>
+<h2> Here are your bookings</h2>
+<% @bookings.each do |booking| %>
+  <p>Start date: <%= booking.start_date %></p>
+  <p>End date: <%= booking.end_date %></p>
+  <p>Car model: <%= booking.car.model %></p>
+<%= link_to "Delete my booking", booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+  <% end %>
+
+<h2> Here are your cars</h2>
+  <% @cars.each do |car| %>
+    <p><%= car.model %></p>S
+  <% end %>

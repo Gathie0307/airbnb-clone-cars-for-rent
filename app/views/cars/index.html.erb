@@ -2,7 +2,7 @@
 <div class="cards">
   <% @cars.each do |car| %>
    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://d2dsc1gf0t80gb.cloudfront.net/wp-content/uploads/2017/08/23125101/mini-5-2000x1125-1000x563.jpg)">
-     <h3> <%= car.model%></h3>
+     <h3><%= link_to car.model.capitalize, car_path(car) %></h3>
      <p><%= car.brand%></p>
      <p><%= car.year%></p>
    </div>

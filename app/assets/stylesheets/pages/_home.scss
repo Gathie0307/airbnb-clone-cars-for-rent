@@ -18,6 +18,14 @@
   padding: 20px;
 }
 
+.caru {
+  background-image: url('https://img.freepik.com/free-photo/sports-car-driving-asphalt-road-night-generative-ai_188544-8052.jpg');
+  background-size: cover;
+  height: 500px;
+  width:  100%;
+  object-fit: cover;
+}
+
 .card-title {
   // Title styles
   font-size: 18px;
@@ -56,10 +64,20 @@
   text-decoration: none;
 }
 
-.carousel-item .car-card {
-  color: white;
+.carousel-inner {
   width: 100%;
-  height: 200px;
+  height: 600px;
+
+  justify-content: center;
+  aspect-ratio: 2 / 1;
+  padding-top: 10px;
+}
+
+#carouselExampleControls {
+  width: 60%;
+}
+
+.carousel-container {
   display: flex;
   align-items: center;
   justify-content: center;

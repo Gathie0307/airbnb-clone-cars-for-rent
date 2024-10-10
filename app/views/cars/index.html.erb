@@ -7,7 +7,7 @@
             class: "form-control",
             placeholder: "Type a keyword"
         %>
-      <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
+      <%= submit_tag "Search", name: "", class: "btn btn-danger", style: "background-color:red" %>
     <% end %>
   </div>
 </div>
@@ -20,7 +20,7 @@
         <h5 class="card-title"><%= car.model.capitalize %></h5>
         <p class="card-text"><%= car.brand%></p>
         <p class="card-text"><%= car.year%></p>
-        <%= link_to "Book now", car_path(car), class: "btn btn-primary"%>
+        <%= link_to "Book now", car_path(car), class: "btn btn-danger", style: "background-color:red"%>
       </div>
     </div>
   </div>

@@ -1,10 +1,19 @@
-<h1><%= @car.model%> </h1>
 
+<%= link_to icon("fa-solid fa-arrow-left", "3x"), cars_path, style:"color: red" %>
+
+<div class= "container">
 <h3>Book this car</h3>
-<%= simple_form_for([@car, @booking]) do |f| %>
+<h1> <%= @car.model.capitalize%> </h1>
+
+
+<div class="card-product">
+  <img src= <%= @car.image_url%> />
+  <div class="card-product-infos">
+    <%= simple_form_for([@car, @booking]) do |f| %>
   <%= f.input :start_date, as: :date, label: "Start Date", input_html: { class: "form-control" } %>
   <%= f.input :end_date, as: :date, label: "End Date", input_html: { class: "form-control" } %>
-  <%= f.button :submit %>
+  <%= f.button :submit, style:"background-color:red" %>
 <% end %>
-
-<%= link_to "Go Back", cars_path %>
+  </div>
+</div>
+</div>

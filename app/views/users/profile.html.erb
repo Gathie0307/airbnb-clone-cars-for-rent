@@ -1,13 +1,36 @@
 <h1>Hello <%=current_user.name %></h1>
 <h2> Here are your bookings</h2>
 <% @bookings.each do |booking| %>
-  <p>Start date: <%= booking.start_date %></p>
-  <p>End date: <%= booking.end_date %></p>
-  <p>Car model: <%= booking.car.model %></p>
-<%= link_to "Delete my booking", booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-  <% end %>
+<div class= "card-icon">
+ <div class="card mb-3" style="max-width: 540px;">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img src=<%= booking.car.image_url %>  class="img-fluid rounded-start h-100" alt="...">
+        </div>
+          <div class="col-md-8">
+                <div class="card-body">
+                  <h2>Car model: <%= booking.car.model %></h2>
+                  <p>Start date: <%= booking.start_date %></p>
+                  <p>End date: <%= booking.end_date %></p>
+                </div>
+            </div>
+      </div>
+  </div>
+</div>
+  <%= link_to <i class="fa-solid fa-trash"></i>, booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+<% end %>
 
 <h2> Here are your cars</h2>
   <% @cars.each do |car| %>
-    <p><%= car.model %></p>S
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+  <div class="col">
+    <div class="card">
+      <img src=<%= car.image_url %>  class="card-img-left" alt="...">
+      <div class="card-body">
+        <h5 class="card-title"><%= car.model %></h5>
+        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      </div>
+    </div>
+  </div>
+  </div>
   <% end %>

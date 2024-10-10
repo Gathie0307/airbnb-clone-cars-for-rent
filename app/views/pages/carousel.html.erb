@@ -1,16 +1,13 @@
-<div class="carousel-container">
   <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
       <% @cars.each_with_index do |car, index| %>
-        <%= link_to car_path(car) do %>
-          <div class="carousel-item <%= 'active' if index == 0 %>">
-            <%# <img src="https://img.freepik.com/free-photo/sports-car-driving-asphalt-road-night-generative-ai_188544-8052.jpg" class="d-block w-100" style="height: 500px; object-fit: cover;"> %>
-            <div  class="caru">
-              <h5><%= car.brand %> <%= car.model %></h5>
-              <p><%= car.year %></p>
-            </div>
+        <div class="carousel-item <%= 'active' if index == 0 %>">
+          <img src="https://img.freepik.com/free-photo/sports-car-driving-asphalt-road-night-generative-ai_188544-8052.jpg" class="d-block w-100" style="height: 800px; object-fit: cover;">
+          <div>
+            <h5><%= car.brand %> <%= car.model %></h5>
+            <p><%= car.year %></p>
           </div>
-        <% end %>
+        </div>
       <% end %>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
@@ -22,4 +19,3 @@
       <span class="visually-hidden">Next</span>
     </button>
   </div>
-</div>

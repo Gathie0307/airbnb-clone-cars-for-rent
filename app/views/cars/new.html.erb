@@ -1,9 +1,17 @@
-<h1> Add new cars </h1>
 
-<%= simple_form_for(@car) do |f|%>
-<%= f.input :brand %>
-<%= f.input :model %>
-<%= f.input :year %>
-<%= f.submit "add new car" %>
-<% end %>
-<%= link_to "go back", cars_path(@car)%>
+<div class="container mt-5">
+  <%= link_to icon("fa-solid fa-arrow-left", "3x"), cars_path(@car) %>
+  <div class="row">
+    <div class="col-sm-4">
+      <img src="https://img.freepik.com/free-photo/luxurious-car-parked-highway-with-illuminated-headlight-sunset_181624-60607.jpg" class="img-thumbnail" alt="...">
+    </div>
+    <div class="col-sm-8"><%= simple_form_for(@car) do |f|%>
+      <%= f.input :brand %>
+      <%= f.input :model %>
+      <%= f.input :year %>
+      <%= f.submit "add new car" %>
+    <% end %>
+    </div>
+  </div>
+
+</div>

@@ -1,1 +1,66 @@
 // Specific CSS for your home-page
+.card {
+  // Card styles
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.card-img-top {
+  // Image styles
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.card-title {
+  // Title styles
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.card-text {
+  // Text styles
+  color: #666;
+}
+
+.btn {
+  // Button styles
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #0069d9;
+}
+
+
+#carCarousel {
+  border: 3px solid red;
+  width: 600px;
+  margin: 0 auto;
+  margin-top: 100px;
+}
+
+.carousel-item a {
+  text-decoration: none;
+}
+
+.carousel-item .car-card {
+  color: white;
+  width: 100%;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

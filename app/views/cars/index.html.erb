@@ -1,13 +1,33 @@
-
+<div class="container">
+<div class="row justify-content-center">
+  <div class="col-sm-8 my-3">
+    <%= form_with url: cars_path, method: :get, class: "d-flex" do %>
+      <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Type a keyword"
+        %>
+      <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
 <div class="cards">
   <% @cars.each do |car| %>
-   <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://d2dsc1gf0t80gb.cloudfront.net/wp-content/uploads/2017/08/23125101/mini-5-2000x1125-1000x563.jpg)">
-     <h3><%= link_to car.model.capitalize, car_path(car) %></h3>
-     <p><%= car.brand%></p>
-     <p><%= car.year%></p>
-   </div>
+ <div class="col">
+    <div class="card">
+      <img src="https://images.pexels.com/photos/1335077/pexels-photo-1335077.jpeg?cs=srgb&dl=pexels-mikebirdy-1335077.jpg&fm=jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title"><%= car.model.capitalize %></h5>
+        <p class="card-text"><%= car.brand%></p>
+        <p class="card-text"><%= car.year%></p>
+        <%= link_to "Book now", car_path(car), class: "btn btn-primary"%>
+      </div>
+    </div>
+  </div>
   <% end %>
-
 </div>
+</div>
+
+
 
 <%= link_to "add a new car", new_car_path, class: "btn btn-flat"%>

@@ -1,13 +1,58 @@
-<h1>Hello <%=current_user.name %></h1>
+
+<div class= "container mt-3">
+<div class="notification">
+  <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large" />
+  <div class="notification-content">
+    <p>Hello <%=current_user.name %></p>
+  </div>
+
+  <div class="notification-actions">
+    <a href="#">Edit <i class="fas fa-pencil-alt"></i></a>
+    <a href="#">Delete <i class="far fa-trash-alt"></i></a>
+  </div>
+</div>
+
 <h2> Here are your bookings</h2>
+<hr>
 <% @bookings.each do |booking| %>
-  <p>Start date: <%= booking.start_date %></p>
-  <p>End date: <%= booking.end_date %></p>
-  <p>Car model: <%= booking.car.model %></p>
-<%= link_to "Delete my booking", booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+
+ <div class="card mb-3 card-icon">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img src=<%= booking.car.image_url %>  class="img-fluid rounded-start h-100" alt="...">
+        </div>
+          <div class="col-md-8">
+                <div class="card-body">
+                  <h2>Car model: <%= booking.car.model %></h2>
+                  <p>Start date: <%= booking.start_date %></p>
+                  <p>End date: <%= booking.end_date %></p>
+                </div>
+            </div>
+      </div>
+    <%= link_to icon("fa-solid", "trash"), booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "delete_button" %>
+  </div>
+
+
   <% end %>
 
+
 <h2> Here are your cars</h2>
+<hr>
+
   <% @cars.each do |car| %>
-    <p><%= car.model %></p>S
+ <div class="card mb-3 card-icon">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img src=<%= car.image_url %>  class="img-fluid rounded-start h-100" alt="...">
+        </div>
+          <div class="col-md-8">
+                <div class="card-body">
+                   <h5 class="card-title"><%= car.model %></h5>
+                   <p> <%= car.brand %></p>
+                   <p> <%= car.year %></p>
+                </div>
+            </div>
+      </div>
+      </div>
   <% end %>
+   </div>

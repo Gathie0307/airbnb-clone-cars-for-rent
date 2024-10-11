@@ -1,8 +1,22 @@
-<h1>Hello <%=current_user.name %></h1>
+
+<div class= "container mt-3">
+<div class="notification">
+  <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large" />
+  <div class="notification-content">
+    <p>Hello <%=current_user.name %></p>
+  </div>
+
+  <div class="notification-actions">
+    <a href="#">Edit <i class="fas fa-pencil-alt"></i></a>
+    <a href="#">Delete <i class="far fa-trash-alt"></i></a>
+  </div>
+</div>
+
 <h2> Here are your bookings</h2>
+<hr>
 <% @bookings.each do |booking| %>
 
- <div class="card mb-3 card-icon" style="max-width: 540px;">
+ <div class="card mb-3 card-icon">
       <div class="row g-0">
         <div class="col-md-4">
           <img src=<%= booking.car.image_url %>  class="img-fluid rounded-start h-100" alt="...">
@@ -23,16 +37,22 @@
 
 
 <h2> Here are your cars</h2>
+<hr>
+
   <% @cars.each do |car| %>
-  <div class="row row-cols-1 row-cols-md-3 g-4">
-  <div class="col">
-    <div class="card">
-      <img src=<%= car.image_url %>  class="card-img-left" alt="...">
-      <div class="card-body">
-        <h5 class="card-title"><%= car.model %></h5>
-        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+ <div class="card mb-3 card-icon">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img src=<%= car.image_url %>  class="img-fluid rounded-start h-100" alt="...">
+        </div>
+          <div class="col-md-8">
+                <div class="card-body">
+                   <h5 class="card-title"><%= car.model %></h5>
+                   <p> <%= car.brand %></p>
+                   <p> <%= car.year %></p>
+                </div>
+            </div>
       </div>
-    </div>
-  </div>
-  </div>
+      </div>
   <% end %>
+   </div>

@@ -6,8 +6,8 @@
           <div class="carousel-item <%= 'active' if index == 0 %> position-relative">
             <img src="<%= car.image_url %>" class="d-block w-100" style="height: 500px; object-fit: cover;">
             <div  class="position-absolute carousel-car-info">
-              <h5><%= car.brand %> <%= car.model %></h5>
-              <p><%= car.year %></p>
+              <h5><% car.brand %> <% car.model %></h5>
+              <p><% car.year %></p>
             </div>
           </div>
         <% end %>
@@ -22,4 +22,7 @@
       <span class="visually-hidden">Next</span>
     </button>
   </div>
+</div>
+<div class="text-center">
+  <%= link_to "All Cars Here!", cars_path, class: "btn btn-primary" %>
 </div>

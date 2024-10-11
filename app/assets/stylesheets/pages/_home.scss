@@ -70,15 +70,22 @@
 
   justify-content: center;
   aspect-ratio: 2 / 1;
-  padding-top: 10px;
 }
 
 #carouselExampleControls {
-  width: 60%;
+  width: 100%;
 }
 
 .carousel-container {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.carousel-car-info {
+  top: 10px;
+  background-color: white;
+  text-align: center;
+  left: 50%;
+  transform: translateX(-50%);
 }

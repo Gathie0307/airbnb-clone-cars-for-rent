@@ -3,9 +3,9 @@
     <div class="carousel-inner">
       <% @cars.each_with_index do |car, index| %>
         <%= link_to car_path(car) do %>
-          <div class="carousel-item <%= 'active' if index == 0 %>">
-            <%# <img src="https://img.freepik.com/free-photo/sports-car-driving-asphalt-road-night-generative-ai_188544-8052.jpg" class="d-block w-100" style="height: 500px; object-fit: cover;"> %>
-            <div  class="">
+          <div class="carousel-item <%= 'active' if index == 0 %> position-relative">
+            <img src="<%= car.image_url %>" class="d-block w-100" style="height: 500px; object-fit: cover;">
+            <div  class="position-absolute carousel-car-info">
               <h5><%= car.brand %> <%= car.model %></h5>
               <p><%= car.year %></p>
             </div>

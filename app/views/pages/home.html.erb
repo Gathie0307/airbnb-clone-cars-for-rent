@@ -4,7 +4,11 @@
       <% @cars.each_with_index do |car, index| %>
         <%= link_to car_path(car) do %>
           <div class="carousel-item <%= 'active' if index == 0 %> position-relative">
-            <img src="<%= car.image_url %>" class="d-block w-100" style="height: 500px; object-fit: cover;">
+            <% if car.image_url %>
+              <img src="<%= car.image_url %>" class="d-block w-100" style="height: 500px; object-fit: cover;">
+            <% else %>
+              <img src="https://carwow-uk-wp-3.imgix.net/fordfiestaalternativeslead.jpg" class="d-block w-100" style="height: 500px; object-fit: cover;">
+            <% end %>
             <div  class="position-absolute carousel-car-info">
               <h5><% car.brand %> <% car.model %></h5>
               <p><% car.year %></p>

@@ -15,7 +15,7 @@
   <% @cars.each do |car| %>
  <div class="col">
     <div class="card">
-      <img src= <%= car.image_url %> class="card-img-top" alt="...">
+      <img src= <%= car.image_url %> class="card-img-top" alt="no image">
       <div class="card-body">
         <h5 class="card-title"><%= car.model.capitalize %></h5>
         <p class="card-text"><%= car.brand%></p>

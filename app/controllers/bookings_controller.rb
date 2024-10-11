@@ -4,7 +4,6 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @car = Car.find(params[:car_id])
     @booking.car = @car
-    @booking.id = current_user
     if @booking.save
       redirect_to profile_path, notice: 'Booking was successfully created.'
     else

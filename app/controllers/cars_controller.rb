@@ -19,6 +19,7 @@ class CarsController < ApplicationController
   def create
     @car = Car.new(car_params)
     @car.user = current_user
+    @car.image_url = "https://www.autocar.co.uk/sites/autocar.co.uk/files/1-mercedes-benz-s-class-2022-road-test-review-tracking-front.jpg"
     if @car.save
       redirect_to cars_path, notice: 'Car was successfully created.'
     else

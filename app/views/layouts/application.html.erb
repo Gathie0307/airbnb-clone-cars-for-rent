@@ -18,7 +18,10 @@
   </head>
 
   <body>
+    <% if controller_name != "pages" %>
     <%= render "shared/navbar" %>
+    <% end %>
+
     <%= yield %>
     <%= render "shared/flashes" %>
     <%= render "shared/footer" %>

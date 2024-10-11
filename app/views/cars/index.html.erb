@@ -5,7 +5,7 @@
       <%= text_field_tag :query,
             params[:query],
             class: "form-control",
-            placeholder: "Type a keyword"
+            placeholder: "Enter a brand, model or year"
         %>
       <%= submit_tag "Search", name: "", class: "btn btn-danger", style: "background-color:red" %>
     <% end %>
@@ -27,7 +27,3 @@
   <% end %>
 </div>
 </div>
-
-
-
-<%= link_to "add a new car", new_car_path, class: "btn btn-flat"%>

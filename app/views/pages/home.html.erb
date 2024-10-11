@@ -1,29 +1,25 @@
-<div class="carousel slide" id="carCarousel" data-bs-ride="carousel">
-  <div class="carousel-indicators">
-    <% @cars.each_with_index do |car, index| %>
-      <button data-bs-target="#carCarousel" data-bs-slide-to="<%= index %>" class="<%= index == 0 ? 'active' : '' %>">
-      </button>
-    <% end %>
-  </div>
-  <div class="carousel-inner">
-    <% @cars.each_with_index do |car, index| %>
-      <div class="carousel-item <%= 'active' if index == 0 %>">
+<div class="carousel-container">
+  <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <% @cars.each_with_index do |car, index| %>
         <%= link_to car_path(car) do %>
-          <div class="car-card"
-              style="background-image: url('https://img.freepik.com/free-photo/sports-car-driving-asphalt-road-night-generative-ai_188544-8052.jpg')">
-            <h5><%= car.brand %> <%= car.model %></h5>
-            <p><%= car.year %></p>
+          <div class="carousel-item <%= 'active' if index == 0 %>">
+            <%# <img src="https://img.freepik.com/free-photo/sports-car-driving-asphalt-road-night-generative-ai_188544-8052.jpg" class="d-block w-100" style="height: 500px; object-fit: cover;"> %>
+            <div  class="">
+              <h5><%= car.brand %> <%= car.model %></h5>
+              <p><%= car.year %></p>
+            </div>
           </div>
         <% end %>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
   </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carCarousel" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carCarousel" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
 </div>
